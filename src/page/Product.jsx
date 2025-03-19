@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
+import { OrbitProgress } from 'react-loading-indicators'
 
 function Product() {
     const {id} = useParams()
@@ -11,7 +12,9 @@ function Product() {
     const review = product?.reviews || [] 
  
     return <section>
-        {isPending && <h2>Loading...</h2>}
+        {isPending && <div className='flex items-center justify-center  h-[100vh]'><OrbitProgress color="#a4a4a4" size="medium" text="" textColor=""/>
+       
+</div>}
         <div>
   {product && (
  <div className="flex justify-around gap-0 w-full mb-6 mt-10">

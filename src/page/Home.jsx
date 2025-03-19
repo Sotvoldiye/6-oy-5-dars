@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { data, Link } from "react-router-dom";
 import Product from "./Product";
 import { useFetch } from "../hooks/useFetch";
+import { OrbitProgress } from "react-loading-indicators";
 function Home() {
   const [ limit, setLimit]= useState(30)
   const {
@@ -22,6 +23,9 @@ function Home() {
      }
     }
   }
+{isPending && <h2><OrbitProgress  color="#a4a4a4" size="medium" text="" textColor=""/>
+</h2>}
+
   return <section>
     {data && (
      <>
